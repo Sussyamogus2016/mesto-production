@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mesto</title>
     
-    <script type="module" crossorigin src="./assets/index-19c0599c.js"></script>
-    <link rel="stylesheet" href="./assets/index-f5e79df5.css">
+    <script type="module" crossorigin src="./assets/index-01f2acb9.js"></script>
+    <link rel="stylesheet" href="./assets/index-01630ebd.css">
   </head>
   <body class="page">
     <div class="page__content">
@@ -46,7 +46,7 @@
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="edit-profile">
+          <form class="popup__form" name="edit-profile" novalidate>
             <label class="popup__label">
               <input
                 type="text"
@@ -54,7 +54,11 @@
                 id="user-name"
                 class="popup__input popup__input_type_name"
                 placeholder="Имя"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="popup__error user-name-error"></span>
             </label>
             <label class="popup__label">
               <input
@@ -63,7 +67,11 @@
                 id="user-description"
                 class="popup__input popup__input_type_description"
                 placeholder="Занятие"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span class="popup__error user-description-error"></span>
             </label>
             <button
               type="submit"
@@ -79,7 +87,7 @@
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Новое место</h3>
-          <form class="popup__form" name="new-place">
+          <form class="popup__form" name="new-place" novalidate>
             <label class="popup__label">
               <input
                 type="text"
@@ -87,7 +95,11 @@
                 id="place-name"
                 class="popup__input popup__input_type_card-name"
                 placeholder="Название"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="popup__error place-name-error"></span>
             </label>
             <label class="popup__label">
               <input
@@ -96,7 +108,9 @@
                 id="place-link"
                 class="popup__input popup__input_type_url"
                 placeholder="Ссылка на картинку"
+                required
               />
+              <span class="popup__error place-link-error"></span>
             </label>
             <button
               type="submit"
@@ -116,26 +130,11 @@
         </div>
       </div>
 
-<!--      <div class="popup popup_type_remove-card">-->
-<!--        <div class="popup__content">-->
-<!--          <button type="button" class="popup__close"></button>-->
-<!--          <h3 class="popup__title">Вы уверены?</h3>-->
-<!--          <form class="popup__form" name="remove-card" novalidate>-->
-<!--            <button-->
-<!--              type="submit"-->
-<!--              class="button popup__button"-->
-<!--            >-->
-<!--              Да-->
-<!--            </button>-->
-<!--          </form>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <div class="popup popup_type_edit-avatar">
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Обновить аватар</h3>
-          <form class="popup__form" name="edit-avatar">
+          <form class="popup__form" name="edit-avatar" novalidate>
             <label class="popup__label">
               <input
                 type="url"
@@ -143,7 +142,9 @@
                 id="user-avatar"
                 class="popup__input popup__input_type_avatar"
                 placeholder="Ссылка на изображение"
+                required
               />
+              <span class="popup__error user-avatar-error"></span>
             </label>
             <button
               type="submit"
@@ -160,7 +161,6 @@
          <button type="button" class="popup__close"></button>
          <h3 class="popup__title">Информация о карточке</h3>
          <dl class="popup__info"></dl>
-
          <h4 class="popup__text"></h4>
          <ul class="popup__list"></ul>
        </div>
